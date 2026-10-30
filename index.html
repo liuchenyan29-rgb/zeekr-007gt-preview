@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>007 GT · 改装预览</title><meta name="description" content="极氪007 GT三维改色与轮毂搭配本地试验">
+  <link rel="stylesheet" href="style.css?v=20261030-clean-ui">
+</head>
+<body>
+  <header><a class="brand" href="./">007 GT</a><div class="project">改色与轮毂预览</div><span class="badge">本地试验版 <i></i></span></header>
+  <main>
+    <section class="viewer" aria-label="汽车三维预览">
+      
+      <div id="canvas-host" aria-label="拖动旋转车辆，滚轮缩放"></div><div id="part-tooltip" hidden></div>
+      <div id="loading" role="status"><span class="spinner"></span><strong id="load-title">正在准备你的 007 GT</strong><span id="load-detail">加载三维模型与材质…</span><button id="retry" hidden onclick="location.reload()">重新加载</button></div>
+      <div class="view-tools"><div class="view-presets"><button data-view="front" class="selected">前侧</button><button data-view="side">侧面</button><button data-view="back">后侧</button></div><button id="rotate" aria-pressed="false" title="自动旋转">↻ <span>自动旋转</span></button><button id="reset" title="重置视角">重置</button></div>
+      <div class="viewer-footer"><span><i></i> <span id="status">正在加载</span></span><span>拖动旋转 · 滚轮缩放</span></div>
+    </section>
+    <aside><div class="panel-head"><h2>车辆设置</h2></div>
+      <section class="part-editor"><div class="part-mode-row"><div><strong>局部改色</strong><span id="part-count">尚未局部改色</span></div><button id="part-mode" type="button" role="switch" aria-checked="false" aria-label="局部改色" disabled><span></span></button></div><div id="part-info" hidden><strong id="part-selected">点击车身，选择一个部件</strong><p id="part-hint">悬停高亮 · 点击锁定 · 然后选择颜色和材质</p><div class="part-actions"><button id="part-reset" type="button" disabled>恢复此部件</button><button id="part-clear" type="button" disabled>清除全部局部改色</button></div></div><div id="hidden-parts" hidden><span>已隐藏 · 点击重新选中</span><div id="hidden-part-list"></div></div></section>
+      <fieldset id="controls" disabled>
+        <section class="control-section"><div class="section-title"><h3><span>01</span> <span id="color-section-label">车身颜色</span></h3><span id="color-name">冰川银</span></div><p class="palette-label">官网默认车色</p><div id="swatches" class="swatches"></div><label class="custom-color"><span>自定义颜色</span><div><input id="color-picker" type="color" value="#cdcfd4" aria-label="自定义车身颜色"><input id="hex" value="#CDCFD4" maxlength="7" aria-label="十六进制颜色"></div></label><div class="common-palette"><div class="palette-label">常用自定义颜色</div><div id="common-colors"></div><p id="common-empty">把当前颜色加入常用色，下次直接选用</p><div class="common-add"><input id="common-color-name" maxlength="24" placeholder="颜色名称（可选）" aria-label="常用颜色名称"><button type="button" id="add-common-color">＋ 添加当前颜色</button></div><p id="common-color-note" role="status"></p></div></section>
+        <section class="control-section"><div class="section-title"><h3><span>02</span> <span id="finish-section-label">车漆质感</span></h3></div><div class="segmented"><button data-finish="gloss" class="selected">亮面</button><button data-finish="matte">哑光</button></div><div id="local-materials" hidden><button type="button" data-local-material="metal">金属</button><button type="button" data-local-material="carbon">碳纤维</button><button type="button" data-local-material="glass">透明</button><button type="button" data-local-material="hidden">完全隐藏</button></div><p class="hint">光泽为模拟效果，实际贴膜请以色卡为准。</p></section>
+        <section class="control-section wheels-section"><div class="section-title"><h3><span>03</span> 轮毂样式</h3><span id="wheel-name">样式 01</span></div><div id="wheels" class="wheels"></div><label class="fitment-label" for="wheel-size"><span>轮毂尺寸</span><output id="wheel-size-value" for="wheel-size">19 寸</output></label><input type="range" id="wheel-size" aria-label="轮毂尺寸" min="18" max="22" step="0.5" value="19"><div class="range-ends"><span>18 寸</span><span>22 寸</span></div><p class="hint">保留原车轮胎颜色与胎纹，外径不变；轮毂越大胎壁越薄。精细多辐模型由 <a href="https://r3dstudios.itch.io/r3d-multi-spoke-wheel-free-3d-game-asset-glb" target="_blank" rel="noopener">R3Dstudios</a> 制作；VFS2/VFS4 由 <a href="https://sketchfab.com/jonver87" target="_blank" rel="noopener">jonver87</a> 制作（CC BY 4.0，已适配轮圈尺寸与材质）。</p></section>
+        <section class="control-section fitment-section"><div class="section-title"><h3><span>04</span> 悬挂与轮距</h3><button type="button" id="fitment-reset">恢复原厂</button></div>
+          <label class="fitment-label" for="ride-height"><span>悬挂高度</span><output id="ride-height-value" for="ride-height">0 mm</output></label>
+          <input type="range" id="ride-height" aria-label="悬挂高度" min="-80" max="60" step="1" value="0"><div class="range-ends"><span>降低 −80</span><span>升高 +60</span></div>
+          <label class="fitment-label" for="et-delta"><span>轮毂 ET 调整量</span><output id="et-delta-value" for="et-delta">0 mm</output></label>
+          <input type="range" id="et-delta" aria-label="轮毂 ET 调整量" min="-40" max="40" step="1" value="0"><div class="range-ends"><span>向外 −40</span><span>向内 +40</span></div>
+          <p class="hint">相对原厂位置，四轮同步调整。仅作姿态预览。</p>
+        </section>
+      </fieldset>
+      <div class="selection"><span>当前方案</span><strong id="summary">冰川银 / 亮面 / 样式 01</strong><label class="design-name-label" for="design-name">搭配名称（可选）</label><input id="design-name" maxlength="40" placeholder="例如：冰湖蓝低趴" autocomplete="off"><button id="save" disabled>保存这套搭配 <span>↗</span></button><small id="save-note" role="status">搭配保存在当前浏览器，刷新显示默认配色</small>
+        <details id="saved-designs"><summary>已保存搭配 <span id="design-count">0</span><i aria-hidden="true">⌄</i></summary><button type="button" id="default-design">默认配色 · 冰川银</button><p id="design-empty">还没有保存的搭配</p><div id="design-list"></div><details id="design-trash" hidden><summary>回收站 <span id="trash-count">0</span></summary><div id="design-trash-list"></div></details></details></div>
+      <p class="disclaimer">非官方个人试验页面 · 车型及模型版权归原权利人</p>
+    </aside>
+  </main>
+  <script src="libs/laya.core.js?v=20261029-g06"></script><script src="libs/laya.d3.js?v=20261029-g06"></script><script src="libs/laya.webgl_2D.js?v=20261029-g06"></script><script src="libs/laya.webgl_3D.js?v=20261029-g06"></script><script src="studio.js?v=20261030-clean-ui"></script><script src="local-paint.js?v=20261029-rim4"></script><script src="fitment.js?v=20261029-fit4"></script><script src="design-library.js?v=20261029-rim4"></script><script src="custom-palette.js?v=20261029-gloss3"></script><script src="wheel-upgrades.js?v=20261029-fit4"></script><script src="app.js?v=20261030-clean-ui"></script>
+</body></html>

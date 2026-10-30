@@ -1,0 +1,95 @@
+{
+  "name": "VFS2",
+  "author": "jonver87",
+  "source": "https://sketchfab.com/3d-models/671ea5f9079e4826a484e797f0b267b6",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "download": "Creator-provided MediaFire link in Sketchfab description",
+  "sourceSha256": "433970a0687c421c00068a7bf5570118b6c7f8d6fa87b512df1724952e232de2",
+  "rimOnly": true,
+  "triangles": 199721,
+  "parts": [
+    {
+      "name": "wheel",
+      "material": 0,
+      "vertices": 59998,
+      "triangles": 113047,
+      "vertexFile": "part-0.v.bin",
+      "indexFile": "part-0.i.bin"
+    },
+    {
+      "name": "wheel",
+      "material": 0,
+      "vertices": 7337,
+      "triangles": 10407,
+      "vertexFile": "part-1.v.bin",
+      "indexFile": "part-1.i.bin"
+    },
+    {
+      "name": "CAP_DETAILS",
+      "material": 1,
+      "vertices": 38229,
+      "triangles": 51157,
+      "vertexFile": "part-2.v.bin",
+      "indexFile": "part-2.i.bin"
+    },
+    {
+      "name": "Material.001",
+      "material": 2,
+      "vertices": 2715,
+      "triangles": 4718,
+      "vertexFile": "part-3.v.bin",
+      "indexFile": "part-3.i.bin"
+    },
+    {
+      "name": "Material",
+      "material": 3,
+      "vertices": 9795,
+      "triangles": 18600,
+      "vertexFile": "part-4.v.bin",
+      "indexFile": "part-4.i.bin"
+    },
+    {
+      "name": "LOGO_CAP",
+      "material": 4,
+      "vertices": 949,
+      "triangles": 1792,
+      "vertexFile": "part-5.v.bin",
+      "indexFile": "part-5.i.bin"
+    }
+  ],
+  "materials": [
+    {
+      "name": "wheel",
+      "color": "#6b7078",
+      "metallic": 0.95,
+      "smoothness": 0.8
+    },
+    {
+      "name": "CAP_DETAILS",
+      "color": "#6b7078",
+      "metallic": 0.95,
+      "smoothness": 0.8
+    },
+    {
+      "name": "Material.001",
+      "color": "#181a1c",
+      "metallic": 0.3,
+      "smoothness": 0.55
+    },
+    {
+      "name": "Material",
+      "color": "#6b7078",
+      "metallic": 0.95,
+      "smoothness": 0.8
+    },
+    {
+      "name": "LOGO_CAP",
+      "color": "#ffffff",
+      "metallic": 0.25,
+      "smoothness": 0.65,
+      "texture": "cap.jpg"
+    }
+  ],
+  "changes": "Transformed axle Y to X, normalized rim diameter, adapted axial depth, partitioned losslessly into 16-bit meshes, assigned display finishes. Original tire and brake assembly retained."
+}

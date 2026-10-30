@@ -1,0 +1,12 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const context={};vm.createContext(context);vm.runInContext(fs.readFileSync('custom-palette.js','utf8')+';this.palette=CustomPalette;',context);
+const palette=context.palette,data=new Map(),storage={getItem:key=>data.get(key)??null,setItem:(key,value)=>data.set(key,value)};
+assert.equal(palette.read(storage).length,0);
+let colors=palette.add(storage,'#ABCDEF','  天空蓝  ');assert.equal(colors[0].color,'#abcdef');assert.equal(colors[0].name,'天空蓝');
+colors=palette.add(storage,'#abcdef','same');assert.equal(colors.length,1);assert.equal(colors[0].name,'same');
+colors=palette.add(storage,'#D66A38','');assert.equal(colors.length,2);assert.equal(colors[1].name,'#D66A38');
+assert.equal(palette.read(storage).length,2);
+const previous=storage.getItem(palette.key);assert.throws(()=>palette.add(storage,'invalid','bad'));assert.equal(storage.getItem(palette.key),previous);
+const blocked={getItem:storage.getItem,setItem(){throw Error('QuotaExceeded');}};assert.throws(()=>palette.add(blocked,'#000000','black'));assert.equal(storage.getItem(palette.key),previous);
+assert.equal(storage.getItem('007gt-design-library'),null);
+console.log('PASS: persistent named custom colours, case-insensitive deduplication, hex fallback, invalid input, failed-write isolation and independent storage.');

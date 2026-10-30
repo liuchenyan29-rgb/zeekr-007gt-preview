@@ -1,0 +1,9 @@
+{
+  "name": "紫白色内饰",
+  "code": "Z010PC027",
+  "path": "resources/car/cc1e/cc1eimg/neishi_zibai.jpg",
+  "source": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/3d/prod/51273386118590137460/laya/LayaExport/resources/car/cc1e/cc1eimg/neishi_zibai.jpg",
+  "bytes": 238959,
+  "sha256": "93b67a0d7343f6637f28b526088aab3878e123a8c828a09dde5f5a299b1ed6e2",
+  "method": "Official insList switches u_AlbedoTexture on neishi and neishi_jinshu; geometry is shared."
+}

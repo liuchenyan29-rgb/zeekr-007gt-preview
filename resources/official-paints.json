@@ -1,0 +1,205 @@
+{
+  "sourcePage": "https://www.zeekrlife.com/toReserve?modelInfoId=9&modelYearCode=GMY_007_GT__02",
+  "sourceConfig": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/3d/prod/51273386118590137460/laya/LayaExport/json/config.json",
+  "verifiedDate": "2026-10-28",
+  "colors": [
+    {
+      "name": "河谷绿",
+      "code": "Z010PC090",
+      "color": "#0d3125",
+      "swatch": "resources/paints/car_paint_senyelv.png",
+      "material": "car_paint_senyelv",
+      "pigment": [
+        0.0518298179195962,
+        0.19379844961240314,
+        0.14555130589753298,
+        1
+      ],
+      "edge": [
+        0.06172256369149785,
+        0.06976744186046513,
+        0.05137912385073014,
+        1
+      ],
+      "materialSource": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/3d/prod/51273386118590137460/laya/LayaExport/resources/car/cc1e/cc1emat/car_paint_senyelv.lmat",
+      "swatchSource": "https://zeekrlife-oss.zeekrlife.com/IMAGE/1/manage/2135/zeekrlife-mp-osp/20260921/d3583826aff54704af6065792aed3606.png",
+      "materialSha256": "0f0592a0bb10e20a9514fae0a408ae6d6c833c5b3abbb1b37dda1af2c1e7f8ae"
+    },
+    {
+      "name": "冰湖蓝",
+      "code": "Z010PC068",
+      "color": "#9bb3cc",
+      "swatch": "resources/paints/car_paint_lan2.png",
+      "material": "car_paint_lan2",
+      "pigment": [
+        0.6096688900907398,
+        0.700896552416194,
+        0.7984496124031008,
+        1
+      ],
+      "edge": [
+        0.41297097530196497,
+        0.44489930674035344,
+        0.5697674418604651,
+        1
+      ],
+      "materialSource": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/3d/prod/51273386118590137460/laya/LayaExport/resources/car/cc1e/cc1emat/car_paint_lan2.lmat",
+      "swatchSource": "https://zeekrlife-oss.zeekrlife.com/IMAGE/1/manage/2135/zeekrlife-mp-osp/20260408/5cdb2b2bc0e5487cadb0b19ec02a5cfc.png",
+      "materialSha256": "04721f352ab7cfce99f62e08e7724d3222da4299d0a04d04096e2013741b93e4"
+    },
+    {
+      "name": "暗夜紫",
+      "code": "Z010PC070",
+      "color": "#1f1a2b",
+      "swatch": "resources/paints/car_paint_shenmizi.png",
+      "material": "car_paint_shenmizi",
+      "pigment": [
+        0.12234628836901983,
+        0.1020671834625323,
+        0.16666666666666666,
+        1
+      ],
+      "edge": [
+        0.135912642579456,
+        0.12823748572802116,
+        0.17054263565891473,
+        1
+      ],
+      "materialSource": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/3d/prod/51273386118590137460/laya/LayaExport/resources/car/cc1e/cc1emat/car_paint_shenmizi.lmat",
+      "swatchSource": "https://zeekrlife-oss.zeekrlife.com/IMAGE/1/manage/2135/zeekrlife-mp-osp/20260408/8bb5b06321434de1b952935b8b7e4b32.png",
+      "materialSha256": "3cb28471828daa75d7ffb77eee50e79b06da2e7fe85b4496f86e10dc04fd7925"
+    },
+    {
+      "name": "冰川银",
+      "code": "Z010PC071",
+      "color": "#cdcfd4",
+      "swatch": "resources/paints/car_paint_yin.png",
+      "material": "car_paint_yin",
+      "pigment": [
+        0.8037377561444624,
+        0.8115896526961677,
+        0.8294573643410853,
+        1
+      ],
+      "edge": [
+        0.5820563668048796,
+        0.6019704642508502,
+        0.6472868217054264,
+        1
+      ],
+      "materialSource": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/3d/prod/51273386118590137460/laya/LayaExport/resources/car/cc1e/cc1emat/car_paint_yin.lmat",
+      "swatchSource": "https://zeekrlife-oss.zeekrlife.com/IMAGE/1/manage/2135/zeekrlife-mp-osp/20260408/38197d6af6284949b14029def31c0564.png",
+      "materialSha256": "578a74d92f9b7ce8290baa02cfcec33bf24152f9a77ef49a86b1b77634d422c8"
+    },
+    {
+      "name": "晨雾米",
+      "code": "Z010PC072",
+      "color": "#fffbf3",
+      "swatch": "resources/paints/car_paint_mi.png",
+      "material": "car_paint_mi",
+      "pigment": [
+        1,
+        0.9854651162790716,
+        0.9534883720930233,
+        1
+      ],
+      "edge": [
+        0.8372093023255813,
+        0.8245898683973322,
+        0.7917793401838832,
+        1
+      ],
+      "materialSource": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/3d/prod/51273386118590137460/laya/LayaExport/resources/car/cc1e/cc1emat/car_paint_mi.lmat",
+      "swatchSource": "https://zeekrlife-oss.zeekrlife.com/IMAGE/1/manage/2135/zeekrlife-mp-osp/20260408/fbf60f1448c84a0ba1ae3f273eeac6d6.png",
+      "materialSha256": "31763dc58207012024eb48fca494f92c6d7ab8ee39970d87e4149b7ee27f9740"
+    },
+    {
+      "name": "云雾粉",
+      "code": "Z010PC073",
+      "color": "#f1d4c5",
+      "swatch": "resources/paints/car_paint_fen.png",
+      "material": "car_paint_fen",
+      "pigment": [
+        0.9457364341085271,
+        0.8299822967561515,
+        0.7734511147166636,
+        1
+      ],
+      "edge": [
+        0.689922480620155,
+        0.558305817579938,
+        0.502734210684454,
+        1
+      ],
+      "materialSource": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/3d/prod/51273386118590137460/laya/LayaExport/resources/car/cc1e/cc1emat/car_paint_fen.lmat",
+      "swatchSource": "https://zeekrlife-oss.zeekrlife.com/IMAGE/1/manage/2135/zeekrlife-mp-osp/20260408/1812dc72b572473fa5170adf25a6c99e.png",
+      "materialSha256": "df709a8b6b101fcc8a417263e20a08e097aa0f817370e88b7bb1c343a4c2a630"
+    },
+    {
+      "name": "旷境绿",
+      "code": "Z010PC074",
+      "color": "#2c3123",
+      "swatch": "resources/paints/car_paint_lv.png",
+      "material": "car_paint_lv",
+      "pigment": [
+        0.17251958309991913,
+        0.19379844961240314,
+        0.13821284778558982,
+        1
+      ],
+      "edge": [
+        0.06172256369149785,
+        0.06976744186046513,
+        0.05137912385073014,
+        1
+      ],
+      "materialSource": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/3d/prod/51273386118590137460/laya/LayaExport/resources/car/cc1e/cc1emat/car_paint_lv.lmat",
+      "swatchSource": "https://zeekrlife-oss.zeekrlife.com/IMAGE/1/manage/2135/zeekrlife-mp-osp/20260408/1f11e6ac66a041dea63fcc8a8ac9a002.png",
+      "materialSha256": "e19278733854861880825e887ede17f62dd51176991c489bff0c2d505d5ad02c"
+    },
+    {
+      "name": "魔力红",
+      "code": "Z010PC069",
+      "color": "#d41135",
+      "swatch": "resources/paints/car_paint_hong.png",
+      "material": "car_paint_hong",
+      "pigment": [
+        0.8294573643410853,
+        0.06751397151613478,
+        0.20634593489682682,
+        1
+      ],
+      "edge": [
+        0.20155038759689928,
+        0.05312180758367889,
+        0.07995822495214057,
+        1
+      ],
+      "materialSource": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/3d/prod/51273386118590137460/laya/LayaExport/resources/car/cc1e/cc1emat/car_paint_hong.lmat",
+      "swatchSource": "https://zeekrlife-oss.zeekrlife.com/IMAGE/1/manage/2135/zeekrlife-mp-osp/20260408/0f22f45ab5df459dafe5e466aeab562e.png",
+      "materialSha256": "2480ea52cc974f232dae561bd5161bb5e4a91761095077eb161d78d40869330b"
+    },
+    {
+      "name": "极夜黑",
+      "code": "Z010PC075",
+      "color": "#000000",
+      "swatch": "resources/paints/car_paint_hei.png",
+      "material": "car_paint_hei",
+      "pigment": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "edge": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "materialSource": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/3d/prod/51273386118590137460/laya/LayaExport/resources/car/cc1e/cc1emat/car_paint_hei.lmat",
+      "swatchSource": "https://zeekrlife-oss.zeekrlife.com/IMAGE/1/manage/2135/zeekrlife-mp-osp/20260408/e8c6b3d9291c47e1b8c67a63d82e69f2.png",
+      "materialSha256": "be588254f3cd11dd091c1a9595472a8ef0a309e9f29de01fc638c0df791a6b5b"
+    }
+  ]
+}

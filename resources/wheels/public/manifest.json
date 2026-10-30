@@ -1,0 +1,47 @@
+{
+ "slug": "alloy-wheel",
+ "triangles": 16940,
+ "texture_px": 2048,
+ "triangles_light": null,
+ "texture_px_light": null,
+ "files": {
+  "glb": {
+   "name": "alloy-wheel.glb",
+   "bytes": 1418416
+  },
+  "blend": {
+   "name": "alloy-wheel.blend",
+   "bytes": 1302039
+  },
+  "fbx": {
+   "name": "alloy-wheel.fbx",
+   "bytes": 2645884
+  },
+  "obj": {
+   "name": "alloy-wheel-obj.zip",
+   "bytes": 1631154
+  },
+  "usdz": {
+   "name": "alloy-wheel.usdz",
+   "bytes": 2398147
+  }
+ },
+ "extras": {
+  "license": "CC0-1.0",
+  "source": "grab3d.com",
+  "dimensions_m": "0.638 x 0.226 x 0.638",
+  "triangles": 16940,
+  "textures": "PBR 2048px: base color, roughness, metallic, normal (baked)",
+  "generator": "Created by grab3d",
+  "created": "2026-10-19",
+  "real_size": "18 inch alloy wheel with 225/40 R18 tyre, 64 cm diameter, 23 cm wide",
+  "notes": "Light aluminium alloy rim with five concave double spokes, rim flanges, five chrome lug nuts and a coral centre cap without logo, mounted tyre with real tread and sidewall rings (no lettering). Stands upright, face to the front (-Y). Object origin on the wheel axis at the hub centre (rolls about the Y axis).",
+  "set": "Cozy Car Parts & Garage Kit"
+ },
+ "origin": {
+  "method": "procedural",
+  "detail": "Built procedurally with Blender scripts. The scripts were written with the help of an AI coding assistant. No generative AI model produced the geometry or textures directly.",
+  "ai_content": false,
+  "ai_assisted_code": true
+ }
+}

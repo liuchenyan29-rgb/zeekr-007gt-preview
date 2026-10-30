@@ -1,0 +1,140 @@
+{
+  "name": "VFS4",
+  "author": "jonver87",
+  "source": "https://sketchfab.com/3d-models/2a078ce1d2b3463cab9bc3179432bf1c",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "download": "Creator-provided MediaFire link in Sketchfab description",
+  "sourceSha256": "96011d562e9e85a6fa7e39bc7aff508e8f743db902f110c11b013ef224f944b5",
+  "rimOnly": true,
+  "triangles": 675089,
+  "parts": [
+    {
+      "name": "Material.011",
+      "material": 0,
+      "vertices": 4785,
+      "triangles": 9040,
+      "vertexFile": "part-0.v.bin",
+      "indexFile": "part-0.i.bin"
+    },
+    {
+      "name": "wheel.001",
+      "material": 1,
+      "vertices": 59998,
+      "triangles": 113723,
+      "vertexFile": "part-1.v.bin",
+      "indexFile": "part-1.i.bin"
+    },
+    {
+      "name": "wheel.001",
+      "material": 1,
+      "vertices": 59998,
+      "triangles": 116940,
+      "vertexFile": "part-2.v.bin",
+      "indexFile": "part-2.i.bin"
+    },
+    {
+      "name": "wheel.001",
+      "material": 1,
+      "vertices": 59998,
+      "triangles": 116978,
+      "vertexFile": "part-3.v.bin",
+      "indexFile": "part-3.i.bin"
+    },
+    {
+      "name": "wheel.001",
+      "material": 1,
+      "vertices": 59999,
+      "triangles": 107694,
+      "vertexFile": "part-4.v.bin",
+      "indexFile": "part-4.i.bin"
+    },
+    {
+      "name": "wheel.001",
+      "material": 1,
+      "vertices": 59998,
+      "triangles": 91607,
+      "vertexFile": "part-5.v.bin",
+      "indexFile": "part-5.i.bin"
+    },
+    {
+      "name": "wheel.001",
+      "material": 1,
+      "vertices": 18317,
+      "triangles": 28083,
+      "vertexFile": "part-6.v.bin",
+      "indexFile": "part-6.i.bin"
+    },
+    {
+      "name": "Material.012",
+      "material": 2,
+      "vertices": 1955,
+      "triangles": 2960,
+      "vertexFile": "part-7.v.bin",
+      "indexFile": "part-7.i.bin"
+    },
+    {
+      "name": "Material.005",
+      "material": 3,
+      "vertices": 257,
+      "triangles": 384,
+      "vertexFile": "part-8.v.bin",
+      "indexFile": "part-8.i.bin"
+    },
+    {
+      "name": "Material.010",
+      "material": 4,
+      "vertices": 25650,
+      "triangles": 49280,
+      "vertexFile": "part-9.v.bin",
+      "indexFile": "part-9.i.bin"
+    },
+    {
+      "name": "Material.009",
+      "material": 5,
+      "vertices": 23440,
+      "triangles": 38400,
+      "vertexFile": "part-10.v.bin",
+      "indexFile": "part-10.i.bin"
+    }
+  ],
+  "materials": [
+    {
+      "name": "Material.011",
+      "color": "#bfc3c9",
+      "metallic": 0.95,
+      "smoothness": 0.8
+    },
+    {
+      "name": "wheel.001",
+      "color": "#bfc3c9",
+      "metallic": 0.95,
+      "smoothness": 0.8
+    },
+    {
+      "name": "Material.012",
+      "color": "#bfc3c9",
+      "metallic": 0.95,
+      "smoothness": 0.8
+    },
+    {
+      "name": "Material.005",
+      "color": "#181a1c",
+      "metallic": 0.3,
+      "smoothness": 0.55
+    },
+    {
+      "name": "Material.010",
+      "color": "#bfc3c9",
+      "metallic": 0.95,
+      "smoothness": 0.8
+    },
+    {
+      "name": "Material.009",
+      "color": "#bfc3c9",
+      "metallic": 0.95,
+      "smoothness": 0.8
+    }
+  ],
+  "changes": "Transformed axle Y to X, normalized rim diameter, adapted axial depth, partitioned losslessly into 16-bit meshes, assigned display finishes. Original tire and brake assembly retained."
+}

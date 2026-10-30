@@ -1,0 +1,9 @@
+{
+  "source": "https://grab3d.com/models/vehicles/alloy-wheel/",
+  "creator": "Grab3D",
+  "license": "CC0-1.0",
+  "vertices": 16742,
+  "triangles": 16940,
+  "sourceSha256": "242e3ff6b4a95fc4c1f627320da891202fe61ba34fc6e48d6b2ec1ca51e82ed7",
+  "changes": "Normalized and rotated OBJ to X-axis wheel; resized texture and packed metallic/smoothness. Procedural classic rims are separately authored in wheel-upgrades.js."
+}

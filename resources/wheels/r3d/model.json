@@ -1,0 +1,144 @@
+{
+  "author": "R3Dstudios",
+  "source": "https://r3dstudios.itch.io/r3d-multi-spoke-wheel-free-3d-game-asset-glb",
+  "usage": "Public free download; author describes rendering/showcase/modding use. No CC license stated. Local preview; retain attribution.",
+  "sha256": "3b61650693e97dbed2a4629e08b61a8bc53b60ac5191f0b35f5977f6c29233a8",
+  "rimFraction": 0.33994195460870014,
+  "parts": [
+    {
+      "name": "brake",
+      "material": 0,
+      "vertices": 20486,
+      "triangles": 40304,
+      "vertexFile": "part-0.vertices.bin",
+      "indexFile": "part-0.indices.bin"
+    },
+    {
+      "name": "brake",
+      "material": 1,
+      "vertices": 44093,
+      "triangles": 45876,
+      "vertexFile": "part-1.vertices.bin",
+      "indexFile": "part-1.indices.bin"
+    },
+    {
+      "name": "LOGO",
+      "material": 2,
+      "vertices": 6086,
+      "triangles": 7060,
+      "vertexFile": "part-2.vertices.bin",
+      "indexFile": "part-2.indices.bin"
+    },
+    {
+      "name": "RIM",
+      "material": 3,
+      "vertices": 55129,
+      "triangles": 76765,
+      "vertexFile": "part-3.vertices.bin",
+      "indexFile": "part-3.indices.bin"
+    },
+    {
+      "name": "RIM2",
+      "material": 3,
+      "vertices": 128,
+      "triangles": 128,
+      "vertexFile": "part-4.vertices.bin",
+      "indexFile": "part-4.indices.bin"
+    },
+    {
+      "name": "SILHOUETTE",
+      "material": 4,
+      "vertices": 2880,
+      "triangles": 1536,
+      "vertexFile": "part-5.vertices.bin",
+      "indexFile": "part-5.indices.bin"
+    },
+    {
+      "name": "THREADS",
+      "material": 5,
+      "vertices": 59999,
+      "triangles": 48543,
+      "vertexFile": "part-6.vertices.bin",
+      "indexFile": "part-6.indices.bin"
+    },
+    {
+      "name": "THREADS",
+      "material": 5,
+      "vertices": 33878,
+      "triangles": 33521,
+      "vertexFile": "part-7.vertices.bin",
+      "indexFile": "part-7.indices.bin"
+    }
+  ],
+  "materials": [
+    {
+      "factor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 0.504531741142273,
+      "color": "mat-0-color.png",
+      "metalGloss": "mat-0-metal-gloss.png"
+    },
+    {
+      "factor": [
+        0.8402512669563293,
+        0.8402512669563293,
+        0.8402512669563293,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 0.42000001668930054
+    },
+    {
+      "factor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 0.5049999952316284,
+      "color": "mat-2-color.png",
+      "metalGloss": "mat-2-metal-gloss.png"
+    },
+    {
+      "factor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 0.5075528621673584,
+      "color": "mat-3-color.png"
+    },
+    {
+      "factor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 0.5,
+      "color": "mat-4-color.png",
+      "metalGloss": "mat-4-metal-gloss.png"
+    },
+    {
+      "factor": [
+        0.005408915225416422,
+        0.005408915225416422,
+        0.005408915225416422,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.5513595342636108
+    }
+  ],
+  "triangles": 253733,
+  "changes": "Applied node transforms, straightened wheel axis, normalized tire diameter; lossless partition into 16-bit index buffers; converted PBR maps. No geometry decimation."
+}

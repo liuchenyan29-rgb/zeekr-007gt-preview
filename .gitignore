@@ -1,0 +1,19 @@
+# Local caches and machine files
+.DS_Store
+__pycache__/
+*.py[cod]
+*.log
+.env
+.env.*
+
+# Review captures and temporary research page
+preview-*
+wheel-candidates.html
+
+# Original authoring/archive copies; runtime assets and source metadata stay tracked
+resources/wheels/**/*.rar
+resources/wheels/**/*.fbx
+resources/wheels/**/*.blend
+resources/wheels/**/*.max
+resources/wheels/**/source.zip
+resources/wheels/r3d/original/
