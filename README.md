@@ -1,5 +1,7 @@
 # 007 GT 改装预览
 
+在线预览：[打开 007 GT 改装预览](https://zeekr007gtpreview-10q3y3hd.maozi.io/)
+
 本地试验网页，使用官网选配页下载的 LayaAir 007 GT 模型，直接由 LayaAir 渲染，无需先转换为 GLB。
 
 ## 启动
