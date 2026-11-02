@@ -215,6 +215,8 @@ const Studio = {
           let pbr = this.materialCache.get(original);
           if (!pbr) {
             pbr = new Laya.PBRStandardMaterial();
+            pbr._factoryPaint = true;
+            PaintTexture.prepare(pbr);
             pbr.name = 'Studio car paint';
             pbr.metallic = .28;
             pbr.smoothness = .92;

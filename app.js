@@ -75,7 +75,7 @@ async function changeWheel(type){const ticket=++wheelSequence;$('status').textCo
 $('color-picker').addEventListener('input',e=>setColor(e.target.value));$('hex').addEventListener('input',e=>{const value=e.target.value.trim();if(/^#[0-9a-f]{6}$/i.test(value))setColor(value);});$('hex').addEventListener('change',e=>{const v=e.target.value.trim();if(/^#[0-9a-f]{6}$/i.test(v))setColor(v);else updateLabels();});
 document.querySelectorAll('[data-finish]').forEach(b=>b.onclick=()=>{if(LocalPaint.enabled){LocalPaint.setMaterial(b.dataset.finish);return;}state.finish=b.dataset.finish;updateLabels();applyPaint();});document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>resetView(b.dataset.view));$('reset').onclick=()=>resetView();$('rotate').onclick=()=>{state.auto=!state.auto;$('rotate').setAttribute('aria-pressed',String(state.auto));};
 let applyingDesign=false;
-function currentDesign(){return {color:state.color,colorName:state.colorName,finish:state.finish,wheel:state.wheel,rideHeight:state.rideHeight,etDelta:state.etDelta,rimInches:state.rimInches,parts:LocalPaint.serialize()};}
+function currentDesign(){return {color:state.color,colorName:state.colorName,finish:state.finish,wheel:state.wheel,rideHeight:state.rideHeight,etDelta:state.etDelta,rimInches:state.rimInches,parts:LocalPaint.serialize(),paintTexture:PaintTexture.serialize()};}
 function renderDesignLibrary(records){
   $('design-count').textContent=String(records.length);
   $('design-list').replaceChildren();
@@ -88,12 +88,13 @@ function renderDesignLibrary(records){
     name.textContent=record.name;
     const d=record.design;
     detail.textContent=`${d.colorName||'自定义'} · ${d.finish==='matte'?'哑光':'亮面'} · ${WheelUpgrades.names[d.wheel]||'样式 '+String(Math.max(0,wheelTypes.indexOf(d.wheel))+1).padStart(2,'0')} · 局部 ${Object.keys(d.parts||{}).length} 处`;
+    if(d.paintTexture)detail.textContent+=' · 车漆贴图';
     text.append(name,detail);button.append(chip,text);button.onclick=()=>applyDesign(d,record.name);
     const card=document.createElement('div');card.className='design-card';
     const actions=document.createElement('div');actions.className='design-actions';
     const update=document.createElement('button');update.type='button';update.textContent='用当前配置更新';update.setAttribute('aria-label','更新搭配：'+record.name);
     update.onclick=()=>{
-      if(applyingDesign)return;
+      if(applyingDesign||PaintTexture.busy){$('save-note').textContent='贴图正在处理，请稍后更新';return;}
       try{renderDesignLibrary(DesignLibrary.update(localStorage,record.id,currentDesign()));$('save-note').textContent='已用当前配置更新「'+record.name+'」';}
       catch{$('save-note').textContent='更新未成功，原搭配保持不变';}
     };
@@ -118,7 +119,7 @@ function renderDesignLibrary(records){
   }
 }
 async function applyDesign(design,name){
-  if(applyingDesign||!ready)return;
+  if(applyingDesign||!ready||PaintTexture.busy)return;
   applyingDesign=true;$('controls').disabled=true;$('save').disabled=true;$('part-mode').disabled=true;
   try{
     LocalPaint.toggle(false);LocalPaint.select(null);LocalPaint.clearAll();
@@ -126,13 +127,14 @@ async function applyDesign(design,name){
     const type=wheelTypes.includes(design.wheel)?design.wheel:'C';
     if(state.wheel!==type)await changeWheel(type);
     LocalPaint.restore(design.parts);
+    await PaintTexture.restore(design.paintTexture);
     state.rideHeight=Fitment.clamp(design.rideHeight,-80,60);state.etDelta=Fitment.clamp(design.etDelta,-40,40);state.rimInches=Fitment.clamp(design.rimInches??(design.wheelScale?19*design.wheelScale/100:19),18,22);
     updateFitmentLabels();updateLabels();$('save-note').textContent='已应用「'+name+'」；刷新仍显示默认配色';
   }finally{applyingDesign=false;$('controls').disabled=false;$('save').disabled=false;$('part-mode').disabled=false;}
 }
 $('default-design').onclick=()=>applyDesign(DesignLibrary.defaults,'默认配色');
 $('save').onclick=()=>{
-  if(applyingDesign)return;
+  if(applyingDesign||PaintTexture.busy){$('save-note').textContent='贴图正在处理，请稍后保存';return;}
   try{
     const records=DesignLibrary.add(localStorage,currentDesign(),$('design-name').value);
     renderDesignLibrary(records);$('design-name').value='';$('saved-designs').open=true;
@@ -175,6 +177,7 @@ async function boot(){
   await loadPalette();
   const host=$('canvas-host');Laya.Config.isAlpha=false;Laya.Config.useRetinalCanvas=true;Laya.Config3D.pixelRatio=Math.min(1,1.6/(window.devicePixelRatio||1));
   await Laya.init({designWidth:host.clientWidth,designHeight:host.clientHeight,scaleMode:'noscale',alignH:'left',alignV:'top'});
+  registerPaintTextureShader();
   const container=document.getElementById('layaContainer');if(container)host.appendChild(container);
   Laya.stage.bgColor='#ffffff';Laya.stage.scaleMode='full';Laya.stage.updateCanvasSize=()=>Laya.stage.setScreenSize(host.clientWidth*Laya.Browser.pixelRatio,host.clientHeight*Laya.Browser.pixelRatio);Laya.stage.updateCanvasSize();
   await Laya.loader.loadPackage('');
@@ -190,6 +193,7 @@ async function boot(){
   Fitment.init([shellRoot,interiorRoot]);
   resetView();renderCamera();ready=true;applyPaint();updateAppearance(1000);await changeWheel(state.wheel);
   await LocalPaint.init({host,camera,shell:shellRoot,interior:interiorRoot,wheels:wheelNode,wheelType:state.wheel,getGlobal:()=>state,onChange:updateLabels,stopRotation:()=>{state.auto=false;velocityYaw=velocityPitch=0;$('rotate').setAttribute('aria-pressed','false');}});
+  PaintTexture.init(paintMaterials);PaintTexture.audit();
 
   updateFitmentLabels();
   try{renderCommonColors(CustomPalette.read(localStorage));}catch{$('common-color-note').textContent='常用色暂时无法读取';}
@@ -208,7 +212,7 @@ async function boot(){
     pose.yaw+=(state.yaw-pose.yaw)*ease;
     pose.pitch+=(state.pitch-pose.pitch)*ease;
     pose.distance+=(state.distance-pose.distance)*ease;
-    renderCamera();updateAppearance(dt);Fitment.tick(dt,state);LocalPaint.tick(now);
+    renderCamera();updateAppearance(dt);Fitment.tick(dt,state);PaintTexture.tick(Fitment.height/1000);LocalPaint.tick(now);
   });
   // Warm the remaining local assets so later wheel changes do not fetch on demand.
   Promise.allSettled(wheelTypes.filter(type=>!WheelUpgrades.names[type]).map(type=>Laya.loader.load(`resources/car/cc1e/cc1efab/cc1e_Tire_${type}.lh`)));

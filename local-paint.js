@@ -297,6 +297,7 @@ const LocalPaint = {
 
   applyPart(part,config) {
     const material=new Laya.PBRStandardMaterial();material.name='Local '+part.id;
+    if(typeof PaintTexture!=='undefined'&&PaintTexture.eligible(part,config))PaintTexture.prepare(material);
     const channels=[1,3,5].map(offset=>parseInt(config.color.slice(offset,offset+2),16)/255);
     material.albedoColor=new Laya.Color(...channels,config.material==='glass'?.45:1);
     material.metallic=config.material==='metal'?.95:.18;
@@ -320,6 +321,7 @@ const LocalPaint = {
     const materials=part.renderer.sharedMaterials;materials[part.slot]=material;part.renderer.sharedMaterials=materials;
     if(part.edited)part.edited.destroy();part.edited=material;
     this.overrides.set(part.id,{color:config.color,colorName:config.colorName,finish:config.finish,material:config.material});
+    if(typeof PaintTexture!=='undefined')PaintTexture.audit();
   },
 
   resetSelected() {
@@ -354,7 +356,7 @@ const LocalPaint = {
       if(this.isHidden(member))continue;
       const material=(member.edited||member.base).clone();
       if(material.shader.name==='carpaintURP')material.setColor('Emissive',new Laya.Color(.02,.32,.27,1));
-      else if(material.shader.name==='PBR'){
+      else if(['PBR','PaintTexturePBR'].includes(material.shader.name)){
         material.addDefine(Laya.Shader3D.getDefineByName('EMISSION'));
         material.setColor('u_EmissionColor',new Laya.Color(.02,.42,.34,1));material.setFloat('u_EmissionIntensity',1);
       }else material.setColor('u_AlbedoColor',new Laya.Color(.2,.8,.65,1));
